@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variedades & Predio — Mercado de Plantas Loma Verde (Escobar · Panamericana Km 54.5)</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mercadodeplantaslomaverde.mitiendanube.com/produccion.html">
+    <meta property="og:title" content="Variedades Botánicas & Predio — Mercado de Plantas Loma Verde">
+    <meta property="og:description" content="Conocé nuestro predio sobre Colectora Oeste Ramal Escobar Km 54.5. Variedad integral en arbustos para cercos vivos, gramíneas, floración, interior, orquídeas y suculentas.">
+    <meta property="og:image" content="images/logo-real.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=6">
+</head>
+<body>
+
+    <!-- ======================================================================
+         NAVEGACIÓN PRINCIPAL CENTRADA Y LIMPIA
+         ====================================================================== -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" aria-label="Mercado de Plantas Loma Verde - Inicio">
+                <img src="images/logo-mercado.svg" alt="Mercado de Plantas Loma Verde" onerror="this.onerror=null; this.src='images/logo-real.png';">
+            </a>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li>
+                <a href="index.html" class="nav-link-reveal" data-text="Inicio">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#servicios" class="nav-link-reveal" data-text="Servicios">
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a href="produccion.html" class="nav-link-reveal active" data-text="Variedades">
+                    <span>Variedades</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#cotizador" class="nav-link-reveal" data-text="Cercos Vivos">
+                    <span>Cercos Vivos</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#opiniones" class="nav-link-reveal" data-text="Clientes">
+                    <span>Clientes</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#contacto" class="nav-link-reveal" data-text="Ubicación">
+                    <span>Ubicación</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="nav-wa-dropdown-wrap">
+                <button class="btn-nav-cta" id="navWaBtn" type="button" aria-expanded="false" aria-label="Consultar por WhatsApp">
+                    <i class="fab fa-whatsapp" style="font-size: 1.15rem;"></i>
+                    <span>Consultar</span>
+                </button>
+
+                <div class="nav-wa-popup" id="navWaPopup">
+                    <div class="wa-popup-header">
+                        <strong><i class="fab fa-whatsapp"></i> ¿En qué te podemos asesorar?</strong>
+                        <button class="wa-popup-close" id="navWaClose" type="button" aria-label="Cerrar menú">&times;</button>
+                    </div>
+                    <div class="wa-popup-list">
+                        <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20hacerles%20una%20consulta%20general" target="_blank" class="wa-popup-item">
+                            <span>💬 Consulta General</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20cotizar%20plantas%20para%20un%20Cerco%20Vivo" target="_blank" class="wa-popup-item">
+                            <span>🌿 Cotizar Cerco Vivo o Lote</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20consultar%20por%20plantas%20de%20exterior%2C%20flores%20y%20gram%C3%ADneas" target="_blank" class="wa-popup-item">
+                            <span>🌸 Flores de Estación, Orquídeas &amp; Exterior</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20consultar%20por%20plantas%20de%20interior%2C%20suculentas%2C%20macetas%20o%20tierra" target="_blank" class="wa-popup-item">
+                            <span>🪴 Interior, Suculentas, Tierra &amp; Macetas</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Soy%20paisajista%20/%20comercio%20y%20quisiera%20pedir%20lista%20de%20precios%20mayorista" target="_blank" class="wa-popup-item">
+                            <span>🚜 Ventas por Mayor / Paisajistas / Envíos</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================================================================
+         HERO DE PÁGINA DE VARIEDADES & PREDIO
+         ====================================================================== -->
+    <header class="prod-page-hero">
+        <div class="prod-hero-inner">
+            <div class="reveal-left">
+                <div class="prod-breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    <span>/</span>
+                    <span>Variedades &amp; Predio</span>
+                </div>
+
+                <h1 class="hero-title" style="margin-bottom: 1.1rem;">
+                    DEL PREDIO A TU JARDÍN<br>
+                    <span class="highlight-leaf">Calidad Botánica &amp; Sanidad.</span>
+                </h1>
+
+                <p style="font-size: 1.04rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1.6rem; max-width: 590px;">
+                    En <strong>Mercado de Plantas Loma Verde</strong> reunimos en nuestro predio sobre Colectora Oeste (Panamericana Km 54.5) una selección inigualable de especies para cada rincón de tu hogar, jardín o desarrollo inmobiliario. Cuidamos cada ejemplar bajo el clima y el suelo de Zona Norte para garantizar un arraigo superior cuando las trasplantás a tu lote.
+                </p>
+
+                <div class="hero-cta-row" style="margin-top: 0;">
+                    <a href="#especies" class="btn-kinetic-primary">
+                        <i class="fas fa-leaf"></i>
+                        <span>Explorar Catálogo de Variedades</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grilla de 4 Indicadores Reales del Mercado -->
+            <div class="prod-kpi-grid reveal-right">
+                <div class="prod-kpi-card">
+                    <div class="prod-kpi-icon"><i class="fas fa-warehouse"></i></div>
+                    <strong>Gran Predio</strong>
+                    <span>Invernaderos &amp; Parque</span>
+                    <small>Amplias naves de exhibición y canchas de cultivo sobre Colectora Oeste Km 54.5.</small>
+                </div>
+
+                <div class="prod-kpi-card">
+                    <div class="prod-kpi-icon"><i class="fas fa-seedling"></i></div>
+                    <strong>+500 Variedades</strong>
+                    <span>Catálogo Completo</span>
+                    <small>Árboles, cercos vivos, orquídeas, florales, interior, cactus y suculentas en stock.</small>
+                </div>
+
+                <div class="prod-kpi-card">
+                    <div class="prod-kpi-icon"><i class="fas fa-temperature-half"></i></div>
+                    <strong>Zona Norte</strong>
+                    <span>Plantas Aclimatadas</span>
+                    <small>Criadas y cuidadas con el régimen de sol y heladas de Loma Verde, Escobar y Pilar.</small>
+                </div>
+
+                <div class="prod-kpi-card">
+                    <div class="prod-kpi-icon"><i class="fas fa-boxes-stacked"></i></div>
+                    <strong>Directo</strong>
+                    <span>Mayorista &amp; Minorista</span>
+                    <small>Abastecemos familias, lotes en obra, paisajistas, jardineros y viveros de la región.</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================================================
+         BLOQUES EDITORIALES DE VALOR PRODUCTIVO
+         ====================================================================== -->
+    <section class="editorial-blocks-row">
+        <!-- Bloque 1: Ventaja de Mercado Productor -->
+        <div class="ed-block ed-block-moss reveal-up">
+            <div>
+                <div class="ed-block-tag"><i class="fas fa-leaf"></i> Mercado de Plantas Loma Verde · Variedad y Sanidad Directa</div>
+                <h3>PLANTAS SANAS Y VIGOROSAS CRIADAS Y CUIDADAS EN NUESTRO PREDIO</h3>
+                <p>Al comprar en un mercado de plantas especializado, los ejemplares no sufren el estrés de traslados prolongados ni cambios bruscos de temperatura. En nuestras instalaciones de Loma Verde cuidamos el sustrato, el riego y la nutrición de cada maceta para asegurar plantas vigorosas y listas para arraigar.</p>
+            </div>
+            <div class="ed-stats-mini">
+                <div class="ed-stat-item">
+                    <strong>100%</strong>
+                    <span>Sanidad Vegetal</span>
+                </div>
+                <div class="ed-stat-item">
+                    <strong>Gran Predio</strong>
+                    <span>Sobre Colectora</span>
+                </div>
+                <div class="ed-stat-item">
+                    <strong>4.7★</strong>
+                    <span>Calificación Google</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         LAS 4 ETAPAS DE NUESTRO CICLO DE CULTIVO & SELECCIÓN
+         ====================================================================== -->
+    <section id="proceso" class="prod-cycle-section">
+        <div class="prod-cycle-container">
+            <div class="section-header-flex reveal-up" style="margin-bottom: 0;">
+                <div>
+                    <span class="eyebrow">Trazabilidad, Sanidad y Cuidado en Cada Sector</span>
+                    <h2>EL CICLO DE <span class="botanical-italic">Nuestra Selección</span></h2>
+                </div>
+                <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20consultar%20por%20plantas%20y%20precios" target="_blank" class="btn-kinetic-outline">
+                    <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i>
+                    <span>Consultar al Mercado</span>
+                </a>
+            </div>
+
+            <div class="prod-cycle-grid">
+                <!-- Etapa 1 -->
+                <article class="prod-step-card reveal-up">
+                    <div>
+                        <div class="prod-step-top">
+                            <span class="prod-step-num">Etapa 01</span>
+                            <div class="prod-step-icon"><i class="fas fa-scissors"></i></div>
+                        </div>
+                        <h3>Selección Genética &amp; Sanidad</h3>
+                        <p>Seleccionamos variedades nobles y vigorosas con alta resistencia a plagas y adaptadas al suelo de Zona Norte, garantizando pureza de especie y floraciones intensas.</p>
+                    </div>
+                    <span class="prod-step-tag"><i class="fas fa-check"></i> Especies Seleccionadas</span>
+                </article>
+
+                <!-- Etapa 2 -->
+                <article class="prod-step-card reveal-up" style="transition-delay: 0.08s;">
+                    <div>
+                        <div class="prod-step-top">
+                            <span class="prod-step-num">Etapa 02</span>
+                            <div class="prod-step-icon"><i class="fas fa-droplet"></i></div>
+                        </div>
+                        <h3>Desarrollo Radicular en Invernadero</h3>
+                        <p>En nuestras naves controlamos humedad y luminosidad para que cada planta desarrolle un sistema radicular firme, blanco y abundante que garantice un trasplante exitoso.</p>
+                    </div>
+                    <span class="prod-step-tag"><i class="fas fa-check"></i> Raíces Sanas y Fuertes</span>
+                </article>
+
+                <!-- Etapa 3 -->
+                <article class="prod-step-card reveal-up" style="transition-delay: 0.16s;">
+                    <div>
+                        <div class="prod-step-top">
+                            <span class="prod-step-num">Etapa 03</span>
+                            <div class="prod-step-icon"><i class="fas fa-seedling"></i></div>
+                        </div>
+                        <h3>Recría en Envase &amp; Tutorado</h3>
+                        <p>Trasplantamos a macetas amplias con sustrato fértil y aireado. Realizamos podas de formación para lograr follajes tupidos y tutoramos en caña las enredaderas y trepadoras.</p>
+                    </div>
+                    <span class="prod-step-tag"><i class="fas fa-check"></i> Follaje Tupido &amp; Tutorado</span>
+                </article>
+
+                <!-- Etapa 4 -->
+                <article class="prod-step-card reveal-up" style="transition-delay: 0.24s;">
+                    <div>
+                        <div class="prod-step-top">
+                            <span class="prod-step-num">Etapa 04</span>
+                            <div class="prod-step-icon"><i class="fas fa-sun"></i></div>
+                        </div>
+                        <h3>Aclimatación Rústica Exterior</h3>
+                        <p>Antes de llegar a tu jardín, las especies de parque y cerco pasan por canchas exteriores en Loma Verde, acostumbrándose al sol pleno, el viento y las heladas de la zona.</p>
+                    </div>
+                    <span class="prod-step-tag"><i class="fas fa-check"></i> Listas para Plantar sin Estrés</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         SECCIÓN EDITORIAL EN CASCADA (SOBRE NUESTRO PREDIO)
+         ====================================================================== -->
+    <section id="nosotros" class="cascading-section">
+        <div class="cascading-grid">
+            <!-- Imagen en cascada con bloque verde salvia desplazado y tarjeta flotante -->
+            <div class="cascading-visual-wrap reveal-left">
+                <div class="cascading-layer-bg"></div>
+                <div class="cascading-layer-main">
+                    <img src="images/nosotros.jpg" alt="Predio de Mercado de Plantas Loma Verde sobre Colectora Oeste Escobar">
+                </div>
+                <div class="cascading-layer-floating-card">
+                    <span class="floating-script">Mercado de Plantas Loma Verde</span>
+                    <strong>CENTRO BOTÁNICO EN ZONA NORTE</strong>
+                    <span>Nuestro predio de exhibición y venta sobre Colectora Oeste, Ramal Escobar Km 54.5.</span>
+                </div>
+            </div>
+
+            <!-- Texto editorial -->
+            <div class="cascading-text-wrap reveal-right">
+                <span class="section-eyebrow">Nuestro Predio &amp; Forma de Trabajar</span>
+                <h2>UN PREDIO BOTÁNICO DONDE CADA PLANTA CRECE <span class="botanical-italic">Sana y con Fuerza</span></h2>
+                <p><strong>Mercado de Plantas Loma Verde</strong> se ha consolidado como un verdadero punto de referencia para aficionados a la jardinería, paisajistas y familias en <strong>Loma Verde</strong> y todo el partido de <strong>Escobar</strong>. Emplazado sobre la <strong>Colectora Oeste del Ramal Escobar (Ruta 9, Km 54.5)</strong>, nuestro predio ofrece un entorno verde, amplio y cómodo para elegir cada ejemplar con tranquilidad.</p>
+                <p>Abastecemos tanto proyectos particulares como grandes obras en barrios cerrados y countries de la zona (<strong>Haras Santa María, Puertos del Lago, El Cazador, San Sebastián, Septiembre</strong>), así como a clientes que se acercan desde Maschwitz, Campana, Zárate, Pilar y CABA buscando variedad botánica, atención cercana y precios convenientes por mayor y menor.</p>
+
+                <div class="cascading-pillars">
+                    <div class="pillar-box">
+                        <i class="fas fa-hand-holding-seedling"></i>
+                        <h4>Variedad &amp; Sanidad</h4>
+                        <p>Desde pequeñas suculentas hasta árboles y arbustos de gran porte: controlamos cada línea para asegurar vigor y sanidad.</p>
+                    </div>
+                    <div class="pillar-box">
+                        <i class="fas fa-comments"></i>
+                        <h4>Asesoramiento Cercano</h4>
+                        <p>Te indicamos con honestidad qué especie funciona mejor según el sol, el riego y el suelo de tu jardín o balcón.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quisiera%20hacerles%20una%20consulta%20sobre%20sus%20plantas" target="_blank" class="btn-kinetic-primary">
+                        <span>Hablar con el Mercado</span>
+                        <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/JmTWHnUJAuab8Sin9" target="_blank" class="btn-kinetic-outline">
+                        <i class="fas fa-location-arrow" style="color: var(--primary-strong);"></i>
+                        <span>Cómo Llegar al Predio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CARRUSEL DE LÍNEAS DE PRODUCCIÓN (TIRA INTERACTIVA CON MOVIMIENTO)
+         ====================================================================== -->
+    <section class="brands-kinetic-section">
+        <div class="brands-title-center reveal-up">
+            <span class="sub">Venta Mayorista &amp; Minorista en Escobar y Zona Norte</span>
+            <h2>LÍNEAS DE <span class="botanical-italic">Nuestro Mercado</span></h2>
+        </div>
+
+        <div class="brands-track-wrapper">
+            <button class="strip-arrow prev" data-target="brandsCarousel" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="brands-scroll-strip" id="brandsCarousel">
+                <div class="brand-glass-card"><img src="images/pilares/cercos-vivos.png" alt="Cercos Vivos - Privacidad y Lotes"></div>
+                <div class="brand-glass-card"><img src="images/pilares/produccion-propia.png" alt="Variedad Botánica - Calidad y Sanidad"></div>
+                <div class="brand-glass-card"><img src="images/pilares/trepadoras-flores.png" alt="Santa Ritas y Flor - Pérgolas y Galerías"></div>
+                <div class="brand-glass-card"><img src="images/pilares/gramineas-canteros.png" alt="Gramíneas y Dietes - Paisajismo Moderno"></div>
+                <div class="brand-glass-card"><img src="images/pilares/cactus-suculentas.png" alt="Cactus y Suculentas - Colección en Mesada"></div>
+                <div class="brand-glass-card"><img src="images/pilares/interior-tropicales.png" alt="Interior y Galería - Alocasias y Ficus"></div>
+                <div class="brand-glass-card"><img src="images/pilares/tierra-macetas.png" alt="Sustratos y Macetas - Tierra Fértil e Insumos"></div>
+                <div class="brand-glass-card"><img src="images/pilares/barrios-paisajismo.png" alt="Loma Verde y Escobar - Asesoramiento Integral"></div>
+                <!-- Set duplicado para recorrido continuo -->
+                <div class="brand-glass-card"><img src="images/pilares/cercos-vivos.png" alt="Cercos Vivos - Privacidad y Lotes"></div>
+                <div class="brand-glass-card"><img src="images/pilares/produccion-propia.png" alt="Variedad Botánica - Calidad y Sanidad"></div>
+                <div class="brand-glass-card"><img src="images/pilares/trepadoras-flores.png" alt="Santa Ritas y Flor - Pérgolas y Galerías"></div>
+                <div class="brand-glass-card"><img src="images/pilares/gramineas-canteros.png" alt="Gramíneas y Dietes - Paisajismo Moderno"></div>
+            </div>
+            <button class="strip-arrow next" data-target="brandsCarousel" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CATÁLOGO VISUAL DE ESPECIES EN EL MERCADO (FOTOS REALES)
+         ====================================================================== -->
+    <section id="especies" class="species-catalog-section">
+        <div class="section-header-flex reveal-up">
+            <div>
+                <span class="eyebrow">Fotografías 100% Reales Tomadas en Nuestras Naves y Predio</span>
+                <h2>ESPECIES EN <span class="botanical-italic">Exhibición &amp; Venta</span></h2>
+            </div>
+            <a href="https://maps.app.goo.gl/JmTWHnUJAuab8Sin9" target="_blank" class="btn-kinetic-outline">
+                <i class="fas fa-camera" style="color: var(--primary-strong);"></i>
+                <span>Ver Fotos en Google Maps</span>
+            </a>
+        </div>
+
+        <!-- Filtros Interactivos por Categoría Botánica -->
+        <div class="filter-pills-wrap reveal-up" role="tablist" aria-label="Filtrar especies del vivero">
+            <button class="filter-pill-btn active" data-filter="all" type="button">
+                <i class="fas fa-border-all"></i> Todas las Líneas (9)
+            </button>
+            <button class="filter-pill-btn" data-filter="cercos" type="button">
+                <i class="fas fa-tree"></i> Cercos Vivos, Trepadoras &amp; Flor
+            </button>
+            <button class="filter-pill-btn" data-filter="canteros" type="button">
+                <i class="fas fa-feather-pointed"></i> Gramíneas, Canteros &amp; Sol Pleno
+            </button>
+            <button class="filter-pill-btn" data-filter="interior" type="button">
+                <i class="fas fa-leaf"></i> Interior, Galería &amp; Tropicales
+            </button>
+            <button class="filter-pill-btn" data-filter="suculentas" type="button">
+                <i class="fas fa-seedling"></i> Cactus, Suculentas &amp; Colgantes
+            </button>
+        </div>
+
+        <!-- Grilla de Especies con Fotos Reales de Mercado Loma Verde -->
+        <div class="species-grid" id="speciesCatalogGrid">
+
+            <!-- Especie 1: Santa Ritas (Bougainvilleas) -->
+            <article class="species-card reveal-up" data-category="cercos"
+                data-title="Santa Ritas Multicolores Tutoradas"
+                data-botanical="Bougainvillea spectabilis / glabra"
+                data-img="images/especies/santa-ritas-floracion.jpg"
+                data-sun="Sol Pleno (6+ hs)"
+                data-water="Riego Moderado"
+                data-use="Pérgolas, Muros y Cercos Vivos"
+                data-desc="Ejemplares tutorados en caña en plena floración (fucsia, violeta, naranja, rojo y blanco). Muy resistentes al calor de verano y de rápido crecimiento para vestir pérgolas, alambrados y muros en barrios cerrados de Escobar.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Floración &amp; Cercos</span>
+                        <img src="images/especies/santa-ritas-floracion.jpg" alt="Santa Ritas en Floración en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Bougainvillea spectabilis</span>
+                        <h3>Santa Ritas en Flor (Todos los Colores)</h3>
+                        <p>Ejemplares tutorados en fucsia, violeta, naranja, rojo y blanco. Explosión de color para pérgolas, muros y cercos perimetrales.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-sun"></i> Sol Pleno</span>
+                            <span class="care-badge"><i class="fas fa-droplet"></i> Riego Bajo/Medio</span>
+                            <span class="care-badge"><i class="fas fa-ruler-vertical"></i> Tutoradas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20disponibilidad%20y%20precio%20de%20Santa%20Ritas%20tutoradas" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Precio y Colores</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 2: Gramíneas, Dietes y Arbustos de Parque -->
+            <article class="species-card reveal-up" data-category="canteros"
+                data-title="Gramíneas Paisajísticas, Dietes y Cortaderas"
+                data-botanical="Pennisetum / Dietes bicolor / Cortaderia"
+                data-img="images/especies/invernaderos-gramineas.jpg"
+                data-sun="Sol Pleno / Media Sombra"
+                data-water="Riego Bajo (Rústicas)"
+                data-use="Canteros Modernos, Entradas y Borduras"
+                data-desc="Disponibles en cantidad en nuestro predio sobre Colectora Oeste. Ideales para diseñar canteros de bajo mantenimiento en countries de Loma Verde, Puertos del Lago y Haras Santa María.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Paisajismo &amp; Parque</span>
+                        <img src="images/especies/invernaderos-gramineas.jpg" alt="Gramíneas Paisajísticas y Arbustos en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Pennisetum · Dietes · Arbustos</span>
+                        <h3>Gramíneas Ornamentales &amp; Parque</h3>
+                        <p>Matas densas y vigorosas criadas al aire libre, listas para plantar en canteros, frentes de casas, bordes de pileta y parques.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-sun"></i> Todo Terreno</span>
+                            <span class="care-badge"><i class="fas fa-snowflake"></i> Resiste Heladas</span>
+                            <span class="care-badge"><i class="fas fa-layer-group"></i> Por Mayor y Menor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Gram%C3%ADneas%20y%20arbustos%20para%20parquizaci%C3%B3n" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar para Parquización</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 3: Ficus Benjamina Variegado & Arbustos de Cerco -->
+            <article class="species-card reveal-up" data-category="cercos"
+                data-title="Ficus Variegados y Arbustos de Cerco Vivo"
+                data-botanical="Ficus benjamina 'Variegata' & Especies Perennes"
+                data-img="images/especies/ficus-arbustos-cerco.jpg"
+                data-sun="Sol Suave / Media Sombra Luminosa"
+                data-water="Riego Moderado"
+                data-use="Cercos Vivos, Galerías y Macetones"
+                data-desc="Ejemplares de follaje disciplinado y luminoso disponibles en envases de diversos litros. Excelentes para generar pantallas visuales elegantes o lucir en macetones de entrada.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Cercos &amp; Follaje</span>
+                        <img src="images/especies/ficus-arbustos-cerco.jpg" alt="Ficus Variegados y Arbustos de Cerco Vivo en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Ficus benjamina variegata &amp; Perennes</span>
+                        <h3>Ficus Variegados &amp; Arbustos de Cerco</h3>
+                        <p>Follaje perenne luminoso en diferentes envases y alturas. Ideales para cierres perimetrales, patios internos y galerías.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-cloud-sun"></i> Sol / Media Sombra</span>
+                            <span class="care-badge"><i class="fas fa-leaf"></i> Hoja Perenne</span>
+                            <span class="care-badge"><i class="fas fa-arrows-up-down"></i> Varios Tamaños</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Ficus%20Variegados%20y%20arbustos%20para%20cerco" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Tamaños y Stock</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 4: Jazmines Tutorados en Flor -->
+            <article class="species-card reveal-up" data-category="cercos"
+                data-title="Jazmines Perfumados Tutorados (País / Azores)"
+                data-botanical="Jasminum polyanthum / Jasminum azoricum"
+                data-img="images/especies/jazmines-trepadoras.jpg"
+                data-sun="Sol Pleno / Media Sombra"
+                data-water="Riego Regular en Primavera/Verano"
+                data-use="Cercos Perfumados, Alambrados y Columnas"
+                data-desc="Trepadoras perfumadas con guías vigorosas en caña, ideales para cubrir alambrados perimetrales, pérgolas de galería y columnas con floración blanca y perfume envolvente.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Trepadoras Perfumadas</span>
+                        <img src="images/especies/jazmines-trepadoras.jpg" alt="Jazmines en Flor Tutorados en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Jasminum · Enredaderas en Flor</span>
+                        <h3>Jazmines Perfumados para Cercos</h3>
+                        <p>Ejemplares guiados en caña listos para cubrir alambrados, cercos divisorios y columnas de galería con flores blancas perfumadas.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-wind"></i> Fragancia Intensa</span>
+                            <span class="care-badge"><i class="fas fa-sun"></i> Sol / Semisombra</span>
+                            <span class="care-badge"><i class="fas fa-border-style"></i> Cubre Cercos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Jazmines%20y%20enredaderas%20para%20cerco" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar por Jazmines</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 5: Dietes, Formios y Herbáceas Perennes -->
+            <article class="species-card reveal-up" data-category="canteros"
+                data-title="Dietes, Lirios y Formios para Canteros"
+                data-botanical="Dietes vegeta / Phormium tenax"
+                data-img="images/especies/dietes-formios-canteros.jpg"
+                data-sun="Sol Pleno / Media Sombra"
+                data-water="Muy Bajo Mantenimiento"
+                data-use="Alineaciones, Canteros y Bordes de Piscina"
+                data-desc="Una de las líneas más nobles y resistentes. Su porte vertical limpio no ensucia el agua de las piletas, soporta pleno sol de verano y frío invernal sin perder su verdor.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Canteros &amp; Piletas</span>
+                        <img src="images/especies/dietes-formios-canteros.jpg" alt="Dietes y Formios en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Dietes · Lirios · Formios</span>
+                        <h3>Herbáceas Perennes &amp; Bordes de Pileta</h3>
+                        <p>Stock continuo para lograr canteros uniformes y prolijos. No ensucian piletas y requieren mínimo mantenimiento anual.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-water-ladder"></i> Ideal Piletas</span>
+                            <span class="care-badge"><i class="fas fa-shield"></i> Ultra Rústica</span>
+                            <span class="care-badge"><i class="fas fa-boxes-stacked"></i> Stock en Cantidad</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Dietes%2C%20Formios%20y%20plantas%20para%20canteros" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Precio por Cantidad</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 6: Alocasias & Tropicales de Galería / Interior -->
+            <article class="species-card reveal-up" data-category="interior"
+                data-title="Alocasias (Oreja de Elefante) y Tropicales"
+                data-botanical="Alocasia macrorrhizos / Colocasia"
+                data-img="images/especies/alocasia-tropicales.jpg"
+                data-sun="Luz Indirecta / Galería Techada"
+                data-water="Riego Frecuente / Sustrato Húmedo"
+                data-use="Interiores Luminosos, Galerías y Patios"
+                data-desc="Ejemplares tropicales de hojas monumentales, criados en invernadero con humedad controlada. Perfectos para brindar una estética moderna y selvática a galerías, livings y entradas techadas.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Interior &amp; Galería</span>
+                        <img src="images/especies/alocasia-tropicales.jpg" alt="Alocasia Oreja de Elefante en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Alocasia · Follaje Tropical</span>
+                        <h3>Alocasias &amp; Tropicales de Galería</h3>
+                        <p>Hojas gigantes de verde profundo, sanas y brillantes. El toque botánico protagonista para livings y galerías modernas.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-couch"></i> Interior / Galería</span>
+                            <span class="care-badge"><i class="fas fa-droplet"></i> Humedad Media</span>
+                            <span class="care-badge"><i class="fas fa-star"></i> Sanidad 100%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Alocasias%20y%20plantas%20tropicales%20de%20interior" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Disponibilidad</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 7: Euphorbias Candelabro & Sansevierias -->
+            <article class="species-card reveal-up" data-category="interior"
+                data-title="Euphorbias Candelabro & Sansevierias"
+                data-botanical="Euphorbia trigona / Sansevieria trifasciata"
+                data-img="images/especies/euphorbias-sansevierias.jpg"
+                data-sun="Muy Luminoso o Sol Directo"
+                data-water="Riego Muy Espaciado"
+                data-use="Diseño Moderno, Macetas Altas e Interior"
+                data-desc="Las predilectas de la decoración arquitectónica por su porte vertical y mantenimiento casi nulo. Disponibles en múltiples alturas, listas para lucir en macetas de diseño.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Porte Arquitectónico</span>
+                        <img src="images/especies/euphorbias-sansevierias.jpg" alt="Euphorbias y Sansevierias en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Euphorbia trigona · Sansevieria</span>
+                        <h3>Euphorbias &amp; Lengua de Suegra</h3>
+                        <p>Ejemplares columnares y Sansevierias disciplinadas de mínimo cuidado, ideales para interiores modernos y galerías soleadas.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-bolt"></i> Ultra Resistente</span>
+                            <span class="care-badge"><i class="fas fa-droplet-slash"></i> Riego Mínimo</span>
+                            <span class="care-badge"><i class="fas fa-building"></i> Deco Moderna</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Euphorbias%20y%20Sansevierias" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Alturas y Precios</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 8: Mesadas de Suculentas & Colección -->
+            <article class="species-card reveal-up" data-category="suculentas"
+                data-title="Suculentas de Colección (Echeverias, Sedum y Crásulas)"
+                data-botanical="Echeveria elegans / Graptopetalum / Crassula"
+                data-img="images/especies/suculentas-esquejes.jpg"
+                data-sun="Sol Suave de Mañana / Luz Plena"
+                data-water="Riego Espaciado"
+                data-use="Souvenirs, Terrarios, Rocallas y Colección"
+                data-desc="Mesadas completas con rosetas perfectas, colores pastel, pruina intacta y raíces sanas. Venta por unidad para coleccionistas o por bandejas completas al por mayor.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Colección &amp; Mayorista</span>
+                        <img src="images/especies/suculentas-esquejes.jpg" alt="Mesadas de Suculentas y Echeverias en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Echeveria · Graptopetalum · Sedum</span>
+                        <h3>Suculentas &amp; Echeverias en Mesada</h3>
+                        <p>Cientos de variedades en maceta individual o bandejas cerradas. Ideales para coleccionistas, rocallas, recuerdos de eventos y revendedores.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-seedling"></i> Sanidad Total</span>
+                            <span class="care-badge"><i class="fas fa-palette"></i> Tonos Pastel</span>
+                            <span class="care-badge"><i class="fas fa-gift"></i> Unidad o Bandeja</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Suculentas%20y%20Echeverias" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Unidad o Bandeja</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Especie 9: Plantas Colgantes, Aloes & Xerófitas -->
+            <article class="species-card reveal-up" data-category="suculentas"
+                data-title="Colgantes (Huernias, Rhipsalis) y Aloes de Sol"
+                data-botanical="Huernia / Stapelia / Aloe maculata & vera"
+                data-img="images/especies/colgantes-huernias.jpg"
+                data-sun="Media Sombra / Sol Filtrado"
+                data-water="Riego Moderado a Bajo"
+                data-use="Galerías, Balcones y Jardines Secos"
+                data-desc="Macetas colgantes tupidas (Huernias, Stapelias, Cola de Mono, Lazos de Amor, Rhipsalis) y ejemplares de Aloe vera y maculata para vestir pérgolas y canteros secos.">
+                <div>
+                    <div class="species-img-box">
+                        <span class="species-cat-tag">Colgantes &amp; Aloes</span>
+                        <img src="images/especies/colgantes-huernias.jpg" alt="Macetas Colgantes en Mercado Loma Verde">
+                        <button class="quickview-trigger" type="button"><i class="fas fa-magnifying-glass-plus"></i> Ficha Botánica</button>
+                    </div>
+                    <div class="species-content">
+                        <span class="species-botanical-name">Huernia · Rhipsalis · Aloe</span>
+                        <h3>Macetas Colgantes &amp; Xerófitas</h3>
+                        <p>Líneas colgantes bien enraizadas y tupidas listas para vestir galerías, balcones y techos verdes con mínimos requerimientos hídricos.</p>
+                        <div class="care-badges">
+                            <span class="care-badge"><i class="fas fa-cloud-sun"></i> Media Sombra</span>
+                            <span class="care-badge"><i class="fas fa-circle-check"></i> Maceta Colgante</span>
+                            <span class="care-badge"><i class="fas fa-heart"></i> Fácil Cuidado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-footer">
+                    <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Consulto%20por%20Plantas%20Colgantes%20y%20Aloes" target="_blank" class="btn-combo-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Variedades</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         FRANJA PARALLAX MAYORISTA / PAISAJISTAS / BARRIOS CERRADOS
+         ====================================================================== -->
+    <section class="parallax-cta-band">
+        <div class="parallax-cta-inner reveal-scale">
+            <span class="hero-kicker" style="margin-bottom: 1rem;">
+                <i class="fas fa-leaf"></i> Atención a Particulares, Barrios Privados, Paisajistas y Viveros
+            </span>
+            <h2>VENÍ A RECORRER NUESTRO MERCADO DE PLANTAS<br><span class="botanical-italic">o Cotizá tu Lista Directo por WhatsApp.</span></h2>
+            <p>Te esperamos sobre Colectora Oeste Ramal Escobar 3950 (Km 54.5) de lunes a sábado, o envianos tu listado de plantas para armarte la cotización con precios mayoristas en el día.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Quiero%20enviarles%20una%20lista%20de%20plantas%20para%20cotizar" target="_blank" class="btn-kinetic-primary">
+                    <i class="fab fa-whatsapp" style="font-size: 1.2rem; color: var(--whatsapp);"></i>
+                    <span>Cotizar por WhatsApp (011 3309-7319)</span>
+                </a>
+                <a href="index.html#cotizador" class="btn-kinetic-outline">
+                    <i class="fas fa-calculator" style="color: var(--primary-strong);"></i>
+                    <span>Ir a la Calculadora de Cercos Vivos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         FOOTER COMPACTO BOTÁNICO
+         ====================================================================== -->
+    <footer class="site-footer">
+        <div class="footer-compact-top">
+            <div class="footer-tags">
+                <a href="index.html#cotizador" class="footer-tag">Cercos Loma Verde</a>
+                <a href="index.html#cotizador" class="footer-tag">Haras Santa María</a>
+                <a href="index.html#cotizador" class="footer-tag">Puertos del Lago</a>
+                <a href="index.html#contacto" class="footer-tag">Mercado en Escobar</a>
+                <a href="#proceso" class="footer-tag">Ciclo de Selección</a>
+                <a href="https://wa.me/5491133097319?text=Hola%20Mercado%20de%20Plantas%20Loma%20Verde!%20Soy%20paisajista%20/%20estoy%20parquizando%20y%20quisiera%20pedir%20presupuesto" target="_blank" class="footer-tag">Parquización y Paisajismo</a>
+                <a href="#especies" class="footer-tag">Gramíneas y Canteros</a>
+                <a href="https://wa.me/5491133097319?text=Hola!%20Consulto%20por%20ventas%20mayoristas%20o%20paisajismo" target="_blank" class="footer-tag">Ventas por Mayor</a>
+                <a href="https://wa.me/5491133097319?text=Hola!%20Consulto%20por%20tierra%20f%C3%A9rtil%20y%20macetas" target="_blank" class="footer-tag">Tierra &amp; Sustratos</a>
+                <a href="https://www.instagram.com/mercadodeplantaslomaverde/" target="_blank" class="footer-tag"><i class="fab fa-instagram"></i> @mercadodeplantaslomaverde</a>
+                <a href="https://maps.app.goo.gl/JmTWHnUJAuab8Sin9" target="_blank" class="footer-tag">Google Maps Oficial</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mercado de Plantas Loma Verde — Colectora Oeste Ramal Escobar 3950, Loma Verde, Escobar, Buenos Aires. Todos los derechos reservados.</p>
+            <p>Diseñado por <strong style="color: var(--primary-strong);">Poldev Estudio</strong> · Edición Botánica &amp; Tierra Viva</p>
+        </div>
+    </footer>
+
+    <!-- ======================================================================
+         MODAL DE FICHA BOTÁNICA / VISTA RÁPIDA DE ESPECIE
+         ====================================================================== -->
+    <div class="botanical-modal" id="speciesQuickModal" aria-hidden="true">
+        <div class="botanical-modal-box">
+            <button class="botanical-modal-close" id="closeQuickModalBtn" aria-label="Cerrar ficha">&times;</button>
+            <div class="botanical-modal-img">
+                <img src="images/especies/santa-ritas-floracion.jpg" alt="Vista ampliada de especie" id="modalSpeciesImg">
+            </div>
+            <div class="botanical-modal-info">
+                <div>
+                    <span class="terra-badge-inline" id="modalSpeciesBotanical" style="margin-bottom: 0.6rem;">Bougainvillea spectabilis</span>
+                    <h3 id="modalSpeciesTitle" style="font-size: 1.9rem; line-height: 1.12; margin-bottom: 0.75rem;">Santa Ritas Multicolores</h3>
+                    <p id="modalSpeciesDesc" style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 1.3rem;"></p>
+
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin-bottom: 1.5rem; background: var(--bg-sage); padding: 1rem 1.15rem; border-radius: 14px; border: 1px solid var(--border-botanical);">
+                        <div style="font-size: 0.86rem;"><strong style="color: var(--primary-deep);"><i class="fas fa-sun" style="color: var(--terra); width: 20px;"></i> Exposición:</strong> <span id="modalSpeciesSun"></span></div>
+                        <div style="font-size: 0.86rem;"><strong style="color: var(--primary-deep);"><i class="fas fa-droplet" style="color: var(--primary-strong); width: 20px;"></i> Riego:</strong> <span id="modalSpeciesWater"></span></div>
+                        <div style="font-size: 0.86rem;"><strong style="color: var(--primary-deep);"><i class="fas fa-compass-drafting" style="color: var(--primary-strong); width: 20px;"></i> Uso Ideal:</strong> <span id="modalSpeciesUse"></span></div>
+                    </div>
+                </div>
+                <a href="https://wa.me/5491133097319" target="_blank" id="modalSpeciesWaBtn" class="btn-kinetic-primary" style="width: 100%; justify-content: center;">
+                    <i class="fab fa-whatsapp" style="font-size: 1.15rem; color: var(--whatsapp);"></i>
+                    <span>Consultar Stock y Precio por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Principal -->
+    <script src="js/main.js?v=4"></script>
+</body>
+</html>

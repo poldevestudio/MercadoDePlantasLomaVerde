@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 70" width="380" height="70">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B4332" />
+      <stop offset="100%" stop-color="#2D6A4F" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52B788" />
+      <stop offset="100%" stop-color="#74C69D" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Emblem -->
+  <g transform="translate(4, 5)">
+    <!-- Rounded Shield Background -->
+    <rect x="0" y="0" width="60" height="60" rx="16" fill="url(#shieldGrad)" />
+    
+    <!-- Greenhouse Arch Outline -->
+    <path d="M 14 46 L 14 26 C 14 18 20 12 30 12 C 40 12 46 18 46 26 L 46 46 Z" 
+          fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.8" stroke-dasharray="3 2" />
+    
+    <!-- Stylized Botanical Sprout / Leaf -->
+    <!-- Main Center Leaf -->
+    <path d="M 30 46 C 30 34 39 25 39 18 C 34 20 28 27 28 36 C 26 31 23 27 19 25 C 20 33 26 40 30 46 Z" 
+          fill="url(#leafGrad)" />
+    
+    <!-- Sun / Seed Accent -->
+    <circle cx="30" cy="18" r="3.2" fill="#E9C46A" />
+
+    <!-- Stem Base -->
+    <path d="M 30 38 L 30 46" stroke="#95D5B2" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(76, 0)">
+    <!-- Eyebrow: MERCADO DE PLANTAS -->
+    <text x="0" y="22" 
+          font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" 
+          font-size="10.5" 
+          font-weight="800" 
+          letter-spacing="2.8" 
+          fill="#2D6A4F">MERCADO DE PLANTAS</text>
+
+    <!-- Main Title: LOMA VERDE -->
+    <text x="0" y="47" 
+          font-family="'Cormorant Garamond', Georgia, serif" 
+          font-size="28" 
+          font-weight="700" 
+          letter-spacing="1.2" 
+          fill="#132A1E">LOMA VERDE</text>
+
+    <!-- Subtitle: MAYORISTA & MINORISTA · ESCOBAR -->
+    <text x="0" y="62" 
+          font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" 
+          font-size="8.5" 
+          font-weight="700" 
+          letter-spacing="2" 
+          fill="#BC6C25">MAYORISTA &amp; MINORISTA · ESCOBAR</text>
+  </g>
+</svg>

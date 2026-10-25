@@ -1,0 +1,2979 @@
+/* ==========================================================================
+   MERCADO DE PLANTAS LOMA VERDE — EDICIÓN BOTÁNICA & TIERRA VIVA
+   Paleta luminosa orgánica: Blanco puro, Seda Salvia, Verde Bosque, Brote y Terracota
+   Ubicación estratégica: Colectora Oeste Ramal Escobar 3950 (Km 54.5) · Loma Verde
+   ========================================================================== */
+
+:root {
+    --primary: #52B788;          /* Verde Brote Vivo — fresco, orgánico y luminoso */
+    --primary-soft: #E8F5EE;     /* Rocío Botánico Claro */
+    --primary-strong: #2D6A4F;   /* Verde Hoja de Invernadero */
+    --primary-deep: #1B4332;     /* Verde Bosque Profundo Mercado Loma Verde */
+    --primary-glow: rgba(82, 183, 136, 0.28);
+
+    --terra: #BC6C25;            /* Terracota / Tierra Fértil & Maceta */
+    --terra-soft: #FDF3E7;       /* Arena Terracota Suave */
+
+    --bg-white: #FFFFFF;         /* Blanco Puro Luminoso */
+    --bg-sage: #F6FAF7;          /* Seda Salvia Natural */
+    --bg-moss: #EDF6F0;          /* Bruma de Invernadero */
+    --bg-linen: #FBF9F5;         /* Lino Orgánico Cálido */
+
+    --text-dark: #132A1E;        /* Carbón Botánico Profundo (máxima legibilidad) */
+    --text-body: #344E41;        /* Gris Verde Natural */
+    --text-muted: #657D70;       /* Salvia Empolvado */
+
+    --whatsapp: #25D366;
+    --border-botanical: rgba(82, 183, 136, 0.38);
+    --border-subtle: rgba(45, 106, 79, 0.14);
+    --shadow-soft: 0 18px 45px rgba(27, 67, 50, 0.08);
+    --shadow-elevated: 0 24px 60px rgba(27, 67, 50, 0.15);
+
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-white);
+    color: var(--text-body);
+    line-height: 1.65;
+    padding-top: 76px;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--primary-soft);
+    color: var(--primary-deep);
+}
+
+/* Custom Scrollbar en Verde Botánico */
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-sage);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    border: 2px solid var(--bg-sage);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-strong);
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Acento itálico botánico elegante */
+.botanical-italic {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--primary-strong);
+    display: inline-block;
+    font-size: 1.08em;
+    letter-spacing: 0.3px;
+}
+
+.terra-badge-inline {
+    display: inline-block;
+    background: var(--terra-soft);
+    color: var(--terra);
+    border: 1px solid rgba(188, 108, 37, 0.3);
+    padding: 0.1rem 0.65rem;
+    border-radius: 50px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   NAVBAR FIJA CON GLASSMORPHISM & EFECTO TEXT-REVEAL
+   ========================================================================== */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 2500 !important;
+    padding: 0.78rem max(5%, calc((100% - 1220px) / 2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-botanical);
+    box-shadow: 0 4px 20px rgba(27, 67, 50, 0.05);
+    transition: all 0.35s var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    padding: 0.56rem max(5%, calc((100% - 1220px) / 2));
+    background: rgba(255, 255, 255, 0.99);
+    border-bottom-color: var(--primary-strong);
+    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.11);
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s var(--transition-bounce);
+}
+
+.logo a:hover img {
+    transform: scale(1.03);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.35rem, 2.1vw, 2.25rem);
+    list-style: none;
+    margin: 0 auto;
+}
+
+.nav-links li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Efecto Text-Reveal en el menú */
+.nav-link-reveal {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-dark);
+    padding: 0.25rem 0;
+}
+
+.nav-link-reveal span {
+    display: block;
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.nav-link-reveal::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    color: var(--primary-strong);
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.nav-link-reveal:hover span {
+    transform: translateY(-100%);
+}
+
+.nav-link-reveal:hover::after {
+    transform: translateY(-100%);
+}
+
+.nav-link-reveal.active {
+    color: var(--primary-strong);
+}
+
+.nav-link-reveal.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-strong);
+    border-radius: 2px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.nav-wa-dropdown-wrap {
+    position: relative;
+}
+
+.btn-nav-cta {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--primary-deep);
+    color: #fff;
+    border: 1px solid var(--primary-deep);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    padding: 0.68rem 1.25rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.52rem;
+    cursor: pointer;
+    transition: all 0.35s var(--transition-smooth);
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.22);
+}
+
+.btn-nav-cta i.fa-whatsapp {
+    color: var(--whatsapp);
+    transition: color 0.3s ease;
+}
+
+.btn-nav-cta .nav-wa-caret {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 0.1rem;
+    transition: transform 0.3s var(--transition-smooth);
+}
+
+.btn-nav-cta.active .nav-wa-caret {
+    transform: rotate(180deg);
+}
+
+.btn-nav-cta:hover,
+.btn-nav-cta.active {
+    background: var(--primary-strong);
+    border-color: var(--primary-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(45, 106, 79, 0.32);
+}
+
+/* Menú desplegable de WhatsApp integrado al botón superior del encabezado */
+.nav-wa-popup {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 356px;
+    max-width: calc(100vw - 28px);
+    background: #fff;
+    border: 1.5px solid var(--primary);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(27, 67, 50, 0.24);
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+    pointer-events: none;
+    transition: all 0.28s var(--transition-smooth);
+    z-index: 2600;
+}
+
+.nav-wa-popup.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--bg-sage);
+    border: 1px solid var(--primary);
+    color: var(--primary-deep);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* ==========================================================================
+   HERO INTERACTIVO CON LOS 4 GLOBITOS DE NAVES & CULTIVO PROPIO
+   ========================================================================== */
+.hero-showcase {
+    position: relative;
+    min-height: calc(100vh - 86px);
+    display: flex;
+    align-items: center;
+    padding: 3rem 5% 4.5rem;
+    overflow: hidden;
+    background: var(--bg-white);
+    overflow-anchor: none;
+}
+
+/* Fondo dinámico sumamente sutil detrás del velo botánico */
+.hero-bg-layers {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 0.9s ease, transform 6s ease-out;
+    filter: brightness(1.05) saturate(0.95) blur(2px);
+}
+
+.hero-bg-slide.active {
+    opacity: 0.16;
+    transform: scale(1);
+}
+
+/* Velo luminoso Blanco & Salvia Botánica */
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 76% 42%, rgba(82, 183, 136, 0.24) 0%, transparent 55%),
+        radial-gradient(circle at 18% 82%, rgba(232, 245, 238, 0.8) 0%, transparent 52%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.91) 52%, rgba(246, 250, 247, 0.84) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, transparent 30%, rgba(255, 255, 255, 0.98) 100%);
+    z-index: 1;
+}
+
+/* Marca de agua cinética continua en trazo verde botánico */
+.hero-kinetic-watermark {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    width: 200%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.22;
+    display: flex;
+    white-space: nowrap;
+    font-family: var(--font-heading);
+    font-size: clamp(3.8rem, 7.5vw, 6.8rem);
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--primary);
+    animation: kineticWatermark 36s linear infinite;
+}
+
+@keyframes kineticWatermark {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1360px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 3.4rem;
+    align-items: center;
+}
+
+/* Columna Izquierda Hero (Primera Vista Limpia y Armoniosa) */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--primary-soft);
+    border: 1px solid var(--primary);
+    color: var(--primary-deep);
+    padding: 0.44rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 15px rgba(82, 183, 136, 0.18);
+}
+
+.hero-kicker i {
+    color: var(--primary-strong);
+    font-size: 0.9rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.65rem, 4.7vw, 4.35rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.35rem;
+}
+
+.hero-title .highlight-leaf {
+    position: relative;
+    display: inline-block;
+    color: var(--primary-strong);
+    font-style: italic;
+    padding: 0 0.25rem;
+}
+
+.hero-title .highlight-leaf::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 12px;
+    background: rgba(82, 183, 136, 0.24);
+    z-index: -1;
+    border-radius: 6px;
+}
+
+.hero-dynamic-caption {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--border-botanical);
+    border-left: 5px solid var(--primary-strong);
+    padding: 1.2rem 1.45rem;
+    border-radius: 0 18px 18px 0;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    max-width: 560px;
+    min-height: 122px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
+    overflow-anchor: none;
+}
+
+.hero-dynamic-caption h4 {
+    font-family: var(--font-sans);
+    color: var(--primary-deep);
+    font-size: 0.92rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    margin-bottom: 0.38rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.16s ease;
+}
+
+.hero-dynamic-caption h4 i {
+    color: var(--primary-strong);
+}
+
+.hero-dynamic-caption p {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    margin: 0;
+    transition: opacity 0.16s ease;
+}
+
+/* Micro-etiquetas de cobertura zonal en el Hero */
+.hero-zone-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.zone-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-sage);
+    border: 1px solid var(--border-botanical);
+    color: var(--text-dark);
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.32rem 0.8rem;
+    border-radius: 50px;
+}
+
+.zone-pill i {
+    color: var(--terra);
+    font-size: 0.74rem;
+}
+
+/* Botones Generales de la Web */
+.btn-kinetic-primary {
+    position: relative;
+    overflow: hidden;
+    background: var(--primary-deep);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    padding: 0.95rem 1.85rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: all 0.35s var(--transition-smooth);
+    box-shadow: 0 10px 26px rgba(27, 67, 50, 0.25);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-kinetic-primary:hover {
+    background: var(--primary-strong);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(45, 106, 79, 0.35);
+}
+
+.btn-kinetic-outline {
+    background: var(--bg-white);
+    color: var(--text-dark);
+    border: 1.5px solid var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    padding: 0.92rem 1.75rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 18px rgba(82, 183, 136, 0.14);
+    cursor: pointer;
+}
+
+.btn-kinetic-outline:hover {
+    border-color: var(--primary-strong);
+    color: var(--primary-deep);
+    background: var(--primary-soft);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   COLUMNA DERECHA HERO: VISOR BOTÁNICO + DOCK DE 4 FICHAS-NAVE INTERACTIVAS
+   (Formato exclusivo Mercado de Plantas Loma Verde)
+   ========================================================================== */
+.hero-visual-stage {
+    position: relative;
+    width: 100%;
+}
+
+.vivero-deck-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(237, 246, 240, 0.94) 100%);
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 28px 12px 28px 12px;
+    padding: 0.95rem;
+    box-shadow:
+        0 24px 55px rgba(27, 67, 50, 0.14),
+        -10px 10px 0px rgba(82, 183, 136, 0.22);
+}
+
+.vivero-main-viewport {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 15 / 10;
+    border-radius: 20px 8px 20px 8px;
+    overflow: hidden;
+    background: var(--primary-deep);
+    border: 2px solid #fff;
+    box-shadow: 0 12px 32px rgba(19, 42, 30, 0.16);
+}
+
+.vivero-photos-stack {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.showcase-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.65s var(--transition-smooth), transform 0.9s var(--transition-smooth);
+}
+
+.showcase-photo.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Barra superior flotante dentro del visor */
+.vivero-viewport-topbar {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.vivero-live-pill {
+    background: rgba(19, 42, 30, 0.84);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(116, 198, 157, 0.45);
+    color: #fff;
+    padding: 0.42rem 0.95rem;
+    border-radius: 12px 4px 12px 4px;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.vivero-live-pill .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #74C69D;
+    box-shadow: 0 0 0 4px rgba(116, 198, 157, 0.28);
+}
+
+.vivero-live-pill .num {
+    color: #74C69D;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding-right: 0.45rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.vivero-live-pill strong {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.vivero-viewport-Controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.vivero-nav-arrow,
+.showcase-zoom-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--primary);
+    color: var(--primary-deep);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.82rem;
+    box-shadow: 0 6px 16px rgba(19, 42, 30, 0.16);
+    transition: all 0.25s ease;
+}
+
+.vivero-nav-arrow:hover,
+.showcase-zoom-btn:hover {
+    background: var(--primary-strong);
+    border-color: var(--primary-strong);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Zócalo inferior con subtítulo y barra de tiempo en vivo */
+.vivero-viewport-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    padding: 1.8rem 1rem 0.7rem;
+    background: linear-gradient(180deg, rgba(19, 42, 30, 0) 0%, rgba(19, 42, 30, 0.86) 100%);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.vivero-footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.3px;
+}
+
+.vivero-footer-meta i {
+    color: #74C69D;
+}
+
+.vivero-progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.vivero-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #74C69D 0%, #52B788 100%);
+    border-radius: 4px;
+    transition: width 5.5s linear;
+}
+
+.vivero-progress-fill.resetting {
+    transition: none;
+    width: 0%;
+}
+
+/* Dock de 4 Tarjetas-Ficha Interactivas (en grilla 2x2 tipo Bento Botánico) */
+.vivero-naves-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.vivero-rail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.35rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: var(--text-muted);
+}
+
+.vivero-rail-header span {
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.vivero-rail-header span i {
+    color: var(--primary-strong);
+}
+
+.vivero-rail-header strong {
+    color: var(--primary-deep);
+    font-weight: 800;
+}
+
+.vivero-naves-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+}
+
+.nave-card-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.7rem;
+    background: #fff;
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 14px 6px 14px 6px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.32s var(--transition-smooth);
+    outline: none;
+    overflow: hidden;
+}
+
+.nave-thumb {
+    width: 54px;
+    height: 50px;
+    border-radius: 10px 4px 10px 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1.5px solid var(--primary-soft);
+}
+
+.nave-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.nave-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.nave-step {
+    font-family: var(--font-sans);
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: var(--terra);
+    line-height: 1.1;
+    margin-bottom: 0.12rem;
+}
+
+.nave-info strong {
+    font-family: var(--font-sans);
+    font-size: 0.83rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.18;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nave-info small {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nave-arrow {
+    font-size: 0.72rem;
+    color: var(--primary);
+    opacity: 0.55;
+    transition: all 0.25s ease;
+}
+
+.nave-card-btn:hover {
+    border-color: var(--primary-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(27, 67, 50, 0.1);
+}
+
+.nave-card-btn:hover .nave-thumb img {
+    transform: scale(1.08);
+    filter: saturate(1.08);
+}
+
+.nave-card-btn.active {
+    background: var(--primary-deep);
+    border-color: var(--primary-deep);
+    box-shadow: 0 10px 24px rgba(27, 67, 50, 0.24);
+    transform: translateY(-2px);
+}
+
+.nave-card-btn.active .nave-thumb {
+    border-color: #74C69D;
+}
+
+.nave-card-btn.active .nave-thumb img {
+    filter: saturate(1.1);
+}
+
+.nave-card-btn.active .nave-step {
+    color: #74C69D;
+}
+
+.nave-card-btn.active .nave-info strong {
+    color: #fff;
+}
+
+.nave-card-btn.active .nave-info small {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.nave-card-btn.active .nave-arrow {
+    color: #74C69D;
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* ==========================================================================
+   BLOQUES ASIMÉTRICOS EDITORIALES (PRODUCTOR DIRECTO & BARRIOS CERRADOS)
+   ========================================================================== */
+.editorial-blocks-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid var(--border-botanical);
+    border-bottom: 1px solid var(--border-botanical);
+}
+
+.ed-block {
+    padding: 3.2rem max(5%, calc((100% - 1280px) / 2));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.ed-block > div:first-child {
+    max-width: 720px;
+}
+
+.ed-block-moss {
+    background: var(--bg-moss);
+    color: var(--text-dark);
+}
+
+.ed-block-linen {
+    background: var(--bg-linen);
+    color: var(--text-dark);
+}
+
+.ed-block-tag {
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: var(--primary-strong);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ed-block h3 {
+    font-size: 1.9rem;
+    line-height: 1.16;
+    margin-bottom: 0.95rem;
+    color: var(--text-dark);
+}
+
+.ed-block p {
+    font-size: 0.96rem;
+    color: var(--text-body);
+    margin-bottom: 1.7rem;
+}
+
+.ed-link-underline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: var(--primary-deep);
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid var(--primary-strong);
+    align-self: flex-start;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.ed-link-underline:hover {
+    gap: 1rem;
+    color: var(--primary-strong);
+}
+
+.ed-stats-mini {
+    display: flex;
+    gap: 2.2rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.ed-stat-item strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: var(--primary-strong);
+    line-height: 1;
+}
+
+.ed-stat-item span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   SERVICIOS & SOLUCIONES PAISAJÍSTICAS — MERCADO DE PLANTAS LOMA VERDE
+   ========================================================================== */
+.combos-section {
+    padding: 6rem 5%;
+    background: var(--bg-white);
+    position: relative;
+}
+
+.section-header-flex {
+    max-width: 1280px;
+    margin: 0 auto 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.section-header-flex .eyebrow {
+    color: var(--primary-strong);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.section-header-flex h2 {
+    font-size: clamp(2.2rem, 3.8vw, 3.3rem);
+    line-height: 1.08;
+    color: var(--text-dark);
+}
+
+.section-header-flex h2 span {
+    color: var(--primary-strong);
+}
+
+.combos-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2.2rem;
+}
+
+.combo-kinetic-card {
+    background: var(--bg-sage);
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s var(--transition-smooth), border-color 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.combo-kinetic-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-strong);
+    box-shadow: var(--shadow-elevated);
+}
+
+.combo-media {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.combo-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--transition-smooth);
+}
+
+.combo-kinetic-card:hover .combo-media img {
+    transform: scale(1.07);
+}
+
+.combo-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(246, 250, 247, 0.96) 100%);
+}
+
+.combo-floating-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-deep);
+    border: 1px solid var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    padding: 0.34rem 0.92rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 14px rgba(19, 42, 30, 0.12);
+}
+
+.combo-icon-orb {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid var(--primary);
+    color: var(--primary-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.16);
+}
+
+.combo-body {
+    padding: 1.4rem 1.8rem 1rem;
+    flex: 1;
+}
+
+.combo-cursive-sub {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--terra);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+}
+
+.combo-title {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.18;
+}
+
+.combo-desc {
+    color: var(--text-body);
+    font-size: 0.93rem;
+    margin-bottom: 1.2rem;
+}
+
+.combo-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.combo-checklist li {
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.combo-checklist li i {
+    color: var(--primary-strong);
+    font-size: 0.75rem;
+    background: var(--primary-soft);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.combo-footer {
+    padding: 1rem 1.8rem 1.8rem;
+}
+
+.combo-price-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px dashed var(--primary);
+    padding: 0.7rem 1.1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.combo-price-bar .price {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+}
+
+.combo-price-bar .note {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--terra);
+    font-weight: 800;
+}
+
+.btn-combo-wa {
+    width: 100%;
+    background: var(--primary-soft);
+    border: 1.5px solid var(--primary);
+    color: var(--primary-deep);
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    padding: 0.88rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-combo-wa:hover {
+    background: var(--primary-strong);
+    border-color: var(--primary-strong);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(45, 106, 79, 0.28);
+}
+
+/* ==========================================================================
+   CATÁLOGO INTERACTIVO DE ESPECIES REALES DEL VIVERO + FILTROS + FICHA RÁPIDA
+   ========================================================================== */
+.species-catalog-section {
+    padding: 6rem 5%;
+    background: var(--bg-sage);
+    border-top: 1px solid var(--border-botanical);
+    border-bottom: 1px solid var(--border-botanical);
+}
+
+.filter-pills-wrap {
+    max-width: 1280px;
+    margin: 0 auto 2.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+}
+
+.filter-pill-btn {
+    background: #fff;
+    border: 1.5px solid var(--border-botanical);
+    color: var(--text-body);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 0.62rem 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(27, 67, 50, 0.05);
+}
+
+.filter-pill-btn i {
+    color: var(--primary-strong);
+}
+
+.filter-pill-btn:hover {
+    border-color: var(--primary-strong);
+    color: var(--primary-deep);
+    transform: translateY(-2px);
+}
+
+.filter-pill-btn.active {
+    background: var(--primary-deep);
+    border-color: var(--primary-deep);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.24);
+}
+
+.filter-pill-btn.active i {
+    color: var(--primary);
+}
+
+.species-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: 1.8rem;
+}
+
+.species-card {
+    background: #fff;
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.35s var(--transition-smooth);
+}
+
+.species-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary-strong);
+    box-shadow: var(--shadow-elevated);
+}
+
+.species-card.is-hidden {
+    display: none;
+}
+
+.species-img-box {
+    position: relative;
+    height: 255px;
+    overflow: hidden;
+    background: var(--bg-moss);
+}
+
+.species-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s var(--transition-smooth);
+}
+
+.species-card:hover .species-img-box img {
+    transform: scale(1.06);
+}
+
+.species-cat-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--primary);
+    color: var(--primary-deep);
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.28rem 0.78rem;
+    border-radius: 50px;
+}
+
+.quickview-trigger {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 3;
+    background: rgba(27, 67, 50, 0.90);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 0.38rem 0.85rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+}
+
+.quickview-trigger:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+    border-color: var(--primary);
+}
+
+.species-content {
+    padding: 1.3rem 1.45rem 0.9rem;
+    flex: 1;
+}
+
+.species-botanical-name {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--terra);
+    display: block;
+    margin-bottom: 0.15rem;
+}
+
+.species-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.species-content p {
+    font-size: 0.88rem;
+    color: var(--text-body);
+    margin-bottom: 0.95rem;
+}
+
+.care-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.5rem;
+}
+
+.care-badge {
+    background: var(--bg-sage);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.22rem 0.62rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.care-badge i {
+    color: var(--primary-strong);
+}
+
+.species-footer {
+    padding: 0.75rem 1.45rem 1.35rem;
+}
+
+/* ==========================================================================
+   CALCULADORA / COTIZADOR DE CERCOS VIVOS & PARQUIZACIÓN POR WHATSAPP
+   ========================================================================== */
+.cerco-calculator-box {
+    max-width: 1280px;
+    margin: 4rem auto 0;
+    background: linear-gradient(135deg, #FFFFFF 0%, #EDF6F0 100%);
+    border: 2px solid var(--primary);
+    border-left: 7px solid var(--primary-strong);
+    border-radius: 22px;
+    padding: 2.8rem 3rem;
+    display: grid;
+    grid-template-columns: 1.08fr 1fr;
+    gap: 2.6rem;
+    align-items: center;
+    box-shadow: var(--shadow-elevated);
+}
+
+.calc-info h3 {
+    font-size: clamp(1.85rem, 3vw, 2.5rem);
+    line-height: 1.12;
+    margin-bottom: 0.85rem;
+}
+
+.calc-info p {
+    font-size: 0.96rem;
+    color: var(--text-body);
+    margin-bottom: 1.25rem;
+}
+
+.calc-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.calc-highlight-pill {
+    background: #fff;
+    border: 1px solid var(--border-botanical);
+    padding: 0.45rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.calc-highlight-pill i {
+    color: var(--terra);
+}
+
+.calc-form-card {
+    background: #fff;
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 18px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.calc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.95rem;
+}
+
+.calc-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primary-deep);
+    margin-bottom: 0.35rem;
+}
+
+.calc-input {
+    width: 100%;
+    background: var(--bg-sage);
+    border: 1.5px solid var(--border-botanical);
+    color: var(--text-dark);
+    padding: 0.78rem 0.95rem;
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.25s, background 0.25s;
+}
+
+.calc-input:focus {
+    border-color: var(--primary-strong);
+    background: #fff;
+}
+
+.calc-result-preview {
+    background: var(--primary-soft);
+    border: 1px dashed var(--primary-strong);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.88rem;
+    color: var(--primary-deep);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.calc-result-preview strong {
+    font-size: 1.05rem;
+    color: var(--primary-strong);
+}
+
+/* ==========================================================================
+   SECCIÓN EN CASCADA CON PARALLAX (SOBRE NUESTRO VIVERO PRODUCTOR)
+   ========================================================================== */
+.cascading-section {
+    padding: 6.5rem 5%;
+    background: var(--bg-white);
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.cascading-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.cascading-visual-wrap {
+    position: relative;
+    padding: 2rem;
+}
+
+.cascading-layer-bg {
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    width: 82%;
+    height: 82%;
+    background: linear-gradient(135deg, var(--primary-soft) 0%, var(--primary) 100%);
+    border-radius: 20px;
+    z-index: 1;
+    transition: transform 0.3s ease-out;
+}
+
+.cascading-layer-main {
+    position: relative;
+    z-index: 2;
+    width: 88%;
+    margin-left: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: var(--shadow-elevated);
+    transition: transform 0.3s ease-out;
+}
+
+.cascading-layer-main img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.cascading-visual-wrap:hover .cascading-layer-main img {
+    transform: scale(1.05);
+}
+
+.cascading-layer-floating-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.97);
+    color: var(--text-dark);
+    padding: 1.35rem 1.75rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-botanical);
+    border-left: 5px solid var(--primary-strong);
+    box-shadow: var(--shadow-elevated);
+    max-width: 330px;
+    transition: transform 0.3s ease-out;
+}
+
+.cascading-layer-floating-card .floating-script {
+    display: block;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.65rem;
+    color: var(--primary-strong);
+    line-height: 1.05;
+    margin-bottom: 0.15rem;
+}
+
+.cascading-layer-floating-card strong {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 1.2px;
+    color: var(--terra);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.cascading-layer-floating-card span {
+    font-size: 0.84rem;
+    color: var(--text-body);
+}
+
+.cascading-text-wrap .section-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-strong);
+    margin-bottom: 0.75rem;
+    display: inline-block;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.2rem;
+}
+
+.cascading-text-wrap h2 {
+    font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 1.35rem;
+}
+
+.cascading-text-wrap p {
+    font-size: 1.01rem;
+    color: var(--text-body);
+    margin-bottom: 1.3rem;
+}
+
+.cascading-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.8rem 0 2.1rem;
+}
+
+.pillar-box {
+    background: var(--bg-sage);
+    padding: 1.3rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-botanical);
+    box-shadow: 0 8px 22px rgba(27, 67, 50, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-strong);
+}
+
+.pillar-box i {
+    font-size: 1.25rem;
+    color: var(--primary-deep);
+    background: var(--primary-soft);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.pillar-box h4 {
+    font-size: 1.18rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-dark);
+}
+
+.pillar-box p {
+    font-size: 0.86rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   TIRA INTERACTIVA DE LÍNEAS DE CULTIVO Y PRODUCCIÓN
+   ========================================================================== */
+.brands-kinetic-section {
+    padding: 4.5rem 0;
+    background: var(--bg-linen);
+    border-top: 1px solid var(--border-botanical);
+    overflow: hidden;
+}
+
+.brands-title-center {
+    text-align: center;
+    margin-bottom: 2.2rem;
+    padding: 0 5%;
+}
+
+.brands-title-center span.sub {
+    color: var(--primary-strong);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.78rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.brands-title-center h2 {
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+}
+
+.brands-track-wrapper {
+    position: relative;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 54px;
+    display: flex;
+    align-items: center;
+}
+
+.brands-scroll-strip {
+    display: flex;
+    gap: 1.4rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.brands-scroll-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.brand-glass-card {
+    width: 230px;
+    height: 122px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid var(--border-botanical);
+    border-radius: 18px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.06);
+    transition: all 0.35s var(--transition-bounce);
+}
+
+.brand-glass-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    border-color: var(--primary-strong);
+    box-shadow: 0 14px 28px rgba(45, 106, 79, 0.16);
+}
+
+.brand-glass-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.strip-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid var(--primary);
+    color: var(--primary-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 6px 16px rgba(27, 67, 50, 0.12);
+    transition: all 0.3s ease;
+}
+
+.strip-arrow:hover {
+    background: var(--primary-strong);
+    border-color: var(--primary-strong);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.strip-arrow.prev { left: 8px; }
+.strip-arrow.next { right: 8px; }
+
+/* ==========================================================================
+   BANNER PARALLAX INTERMEDIO (ESTética Botánica Luminosa)
+   ========================================================================== */
+.parallax-cta-band {
+    position: relative;
+    padding: 6rem 5%;
+    text-align: center;
+    background: url('../images/local/local-1.jpg') center/cover fixed;
+    overflow: hidden;
+    border-top: 1px solid var(--border-botanical);
+    border-bottom: 1px solid var(--border-botanical);
+}
+
+.parallax-cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(232, 245, 238, 0.91) 100%);
+}
+
+.parallax-cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.parallax-cta-inner h2 {
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    color: var(--text-dark);
+    margin-bottom: 0.85rem;
+}
+
+.parallax-cta-inner p {
+    font-size: 1.08rem;
+    color: var(--text-body);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   OPINIONES DE CLIENTES EN GOOGLE MAPS (5.0 ★)
+   ========================================================================== */
+.reviews-section {
+    padding: 6rem 5%;
+    background: var(--bg-sage);
+}
+
+.reviews-strip {
+    display: flex;
+    gap: 1.8rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem 2rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.reviews-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.review-frame {
+    min-width: 330px;
+    max-width: 380px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 16px;
+    border: 1.5px solid var(--primary);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.review-frame:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-elevated);
+}
+
+/* ==========================================================================
+   UBICACIÓN ESTRATÉGICA (LOMA VERDE / ESCOBAR) & HORARIOS CON DETECTOR DE DÍA HOY
+   ========================================================================== */
+.location-section {
+    padding: 6rem 5%;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-botanical);
+}
+
+.location-split {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.schedule-panel {
+    background: var(--bg-sage);
+    border: 1.5px solid var(--border-botanical);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
+}
+
+.panel-heading {
+    font-size: 1.55rem;
+    color: var(--primary-deep);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.panel-heading i {
+    color: var(--primary-strong);
+    font-size: 1.2rem;
+}
+
+.schedule-table {
+    margin: 1.25rem 0 1.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.05rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    font-size: 0.92rem;
+    color: var(--text-body);
+}
+
+.schedule-row.today {
+    background: var(--primary-soft);
+    border-color: var(--primary-strong);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.schedule-row .today-tag {
+    display: none;
+    background: var(--primary-strong);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 800;
+    padding: 0.12rem 0.5rem;
+    border-radius: 50px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+
+.schedule-row.today .today-tag {
+    display: inline-block;
+}
+
+.map-frame-box {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    min-height: 440px;
+    box-shadow: var(--shadow-soft);
+}
+
+.map-frame-box iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    border: none;
+}
+
+/* ==========================================================================
+   MODALES: FICHA BOTÁNICA DE ESPECIE & LIGHTBOX DEL VIVERO
+   ========================================================================== */
+.botanical-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(19, 42, 30, 0.82);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.botanical-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.botanical-modal-box {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 22px;
+    max-width: 880px;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    position: relative;
+    box-shadow: 0 28px 65px rgba(19, 42, 30, 0.45);
+}
+
+.botanical-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--primary);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+}
+
+.botanical-modal-close:hover {
+    background: var(--primary-strong);
+    color: #fff;
+}
+
+.botanical-modal-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    max-height: 480px;
+    object-fit: cover;
+}
+
+.botanical-modal-info {
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   ANIMACIONES SCROLL REVEAL
+   ========================================================================== */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+    opacity: 0;
+    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    will-change: opacity, transform;
+}
+
+.reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-45px); }
+.reveal-right { transform: translateX(45px); }
+.reveal-scale { transform: scale(0.94); }
+
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-scale.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP MULTI-OPCIONES (ESTética Botánica)
+   ========================================================================== */
+.wa-floating-widget {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 9999;
+}
+
+.wa-Launcher-btn {
+    background: #fff;
+    border: 2px solid var(--primary-strong);
+    color: var(--text-dark);
+    height: 58px;
+    border-radius: 50px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 12px 32px rgba(27, 67, 50, 0.24);
+    transition: all 0.35s var(--transition-bounce);
+    position: relative;
+}
+
+.wa-Launcher-btn:hover {
+    background: var(--primary-deep);
+    border-color: var(--primary-deep);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.wa-Launcher-btn i {
+    font-size: 1.65rem;
+    color: var(--whatsapp);
+    transition: color 0.3s;
+}
+
+.wa-Launcher-label {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.wa-notif-badge {
+    position: absolute;
+    top: -5px;
+    right: -3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--terra);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(188, 108, 37, 0.5);
+    animation: pulseBadge 1.8s infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.wa-popup-menu {
+    position: absolute;
+    bottom: 72px;
+    right: 0;
+    width: 340px;
+    background: #fff;
+    border: 1.5px solid var(--primary);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(27, 67, 50, 0.24);
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.wa-popup-menu.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.wa-popup-header {
+    background: var(--primary-soft);
+    color: var(--primary-deep);
+    border-bottom: 1px solid var(--border-botanical);
+    padding: 0.95rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wa-popup-header strong {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wa-popup-close {
+    background: none;
+    border: none;
+    color: var(--primary-deep);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.wa-popup-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.wa-popup-item {
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: background 0.25s, color 0.25s, padding-left 0.25s;
+}
+
+.wa-popup-item:last-child {
+    border-bottom: none;
+}
+
+.wa-popup-item:hover {
+    background: var(--bg-sage);
+    color: var(--primary-strong);
+    padding-left: 1.5rem;
+}
+
+/* ==========================================================================
+   FOOTER EDITORIAL BOTÁNICO COMPACTO
+   ========================================================================== */
+.site-footer {
+    background: var(--bg-moss);
+    border-top: 2px solid var(--primary);
+    padding: 2.2rem 5% 1.8rem;
+}
+
+.footer-compact-top {
+    max-width: 1280px;
+    margin: 0 auto 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+}
+
+.footer-tag {
+    background: #fff;
+    border: 1px solid var(--border-botanical);
+    padding: 0.34rem 0.78rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-body);
+    transition: all 0.25s;
+}
+
+.footer-tag:hover {
+    border-color: var(--primary-strong);
+    background: var(--primary-strong);
+    color: #fff;
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--border-botanical);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   HERO CTA ROW & PUENTE EDITORIAL A PRODUCCIÓN (EN INDEX.HTML)
+   ========================================================================== */
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.45rem;
+}
+
+.prod-bridge-section {
+    padding: 0 5% 4.8rem;
+    background: var(--bg-white);
+}
+
+.prod-bridge-card {
+    max-width: 1280px;
+    margin: 0 auto;
+    background:
+        radial-gradient(circle at 88% 20%, rgba(82, 183, 136, 0.28) 0%, transparent 45%),
+        linear-gradient(135deg, #163729 0%, #1B4332 58%, #245540 100%);
+    border-radius: 32px;
+    padding: 2.9rem 3.2rem;
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    gap: 2.6rem;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 24px 55px rgba(22, 55, 41, 0.22);
+    border: 1px solid rgba(116, 198, 157, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.prod-bridge-info .eyebrow-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(82, 183, 136, 0.2);
+    border: 1px solid rgba(116, 198, 157, 0.45);
+    color: #B7E4C7;
+    padding: 0.36rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.prod-bridge-info h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.3vw, 2.95rem);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 0.9rem;
+}
+
+.prod-bridge-info h2 .botanical-italic {
+    color: #95D5B2;
+    font-style: italic;
+}
+
+.prod-bridge-info p {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.45rem;
+    max-width: 620px;
+}
+
+.prod-bridge-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.65rem;
+}
+
+.prod-bridge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    padding: 0.42rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.prod-bridge-pill i {
+    color: #74C69D;
+}
+
+.prod-bridge-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.btn-bridge-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #fff;
+    color: var(--primary-deep);
+    padding: 0.92rem 1.7rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    transition: all 0.3s var(--transition-smooth);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.btn-bridge-light:hover {
+    background: #B7E4C7;
+    color: #0F291E;
+    transform: translateY(-2px);
+}
+
+.prod-bridge-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.prod-mini-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3.2;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.26);
+    display: block;
+}
+
+.prod-mini-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.prod-mini-card:hover img {
+    transform: scale(1.07);
+}
+
+.prod-mini-card span {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(15, 41, 30, 0.86);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.32rem 0.6rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(116, 198, 157, 0.35);
+}
+
+/* ==========================================================================
+   PÁGINA DEDICADA: PRODUCCION.HTML (HERO, CICLO DE CULTIVO Y MAYORISTA)
+   ========================================================================== */
+.prod-page-hero {
+    position: relative;
+    padding: 4rem 5% 4.5rem;
+    background:
+        radial-gradient(circle at 82% 24%, rgba(82, 183, 136, 0.22) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-sage) 0%, var(--bg-white) 100%);
+    border-bottom: 1px solid var(--border-botanical);
+    overflow: hidden;
+}
+
+.prod-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.prod-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.prod-breadcrumb a {
+    color: var(--primary-strong);
+}
+
+.prod-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.prod-kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.prod-kpi-card {
+    background: #fff;
+    border: 1px solid var(--border-botanical);
+    border-radius: 22px;
+    padding: 1.35rem 1.4rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.prod-kpi-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-strong);
+}
+
+.prod-kpi-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary-soft);
+    color: var(--primary-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.prod-kpi-card strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    line-height: 1.05;
+    color: var(--primary-deep);
+    margin-bottom: 0.25rem;
+}
+
+.prod-kpi-card span {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+}
+
+.prod-kpi-card small {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Sección de las 4 Etapas del Ciclo de Producción Propia */
+.prod-cycle-section {
+    padding: 5rem 5%;
+    background: var(--bg-linen);
+    border-bottom: 1px solid var(--border-botanical);
+}
+
+.prod-cycle-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.prod-cycle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.35rem;
+    margin-top: 2.6rem;
+}
+
+.prod-step-card {
+    background: #fff;
+    border: 1px solid var(--border-botanical);
+    border-radius: 24px;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.35s var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prod-step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-strong);
+    box-shadow: 0 18px 36px rgba(27, 67, 50, 0.12);
+}
+
+.prod-step-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+}
+
+.prod-step-num {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--primary-soft);
+    color: var(--primary-deep);
+    border: 1px solid var(--primary);
+    padding: 0.28rem 0.75rem;
+    border-radius: 50px;
+}
+
+.prod-step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-sage);
+    color: var(--primary-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.prod-step-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    line-height: 1.18;
+    color: var(--text-dark);
+    margin-bottom: 0.65rem;
+}
+
+.prod-step-card p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.prod-step-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--primary-strong);
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border-botanical);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero-container,
+    .cascading-grid,
+    .location-split,
+    .cerco-calculator-box,
+    .botanical-modal-box,
+    .prod-bridge-card,
+    .prod-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .prod-cycle-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .editorial-blocks-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ed-block-moss {
+        border-right: none;
+        border-bottom: 1px solid var(--border-botanical);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 2500 !important;
+        padding: 0.65rem 4%;
+    }
+
+    .logo img {
+        height: 44px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.4rem;
+        border-bottom: 2px solid var(--primary);
+        box-shadow: 0 15px 30px rgba(27, 67, 50, 0.14);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-showcase {
+        min-height: auto;
+        align-items: flex-start;
+        padding: 1.2rem 4.5% 2.6rem;
+    }
+
+    .hero-container {
+        gap: 1.25rem;
+    }
+
+    .hero-kicker {
+        font-size: 0.68rem;
+        letter-spacing: 0.8px;
+        padding: 0.35rem 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.15rem, 8.6vw, 2.85rem);
+        line-height: 1.08;
+        margin-bottom: 0.85rem;
+    }
+
+    .hero-dynamic-caption {
+        padding: 0.9rem 1.05rem;
+        min-height: 136px;
+    }
+
+    .vivero-main-viewport {
+        aspect-ratio: 4 / 3.4;
+        border-radius: 22px 22px 16px 16px;
+    }
+
+    .vivero-viewport-topbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        gap: 0.45rem;
+    }
+
+    .vivero-live-pill {
+        padding: 0.34rem 0.65rem;
+        font-size: 0.68rem;
+        gap: 0.4rem;
+        min-width: 0;
+        max-width: calc(100% - 108px);
+    }
+
+    .vivero-live-pill strong {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-nav-cta {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .btn-nav-cta span {
+        display: none;
+    }
+
+    .btn-nav-cta i.fa-whatsapp {
+        font-size: 1.3rem !important;
+    }
+
+    .nav-wa-popup {
+        position: fixed;
+        top: 68px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-width: 380px;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+
+    .nav-wa-popup .wa-popup-header {
+        padding: 0.8rem 1rem;
+    }
+
+    .nav-wa-popup .wa-popup-header strong {
+        font-size: 0.78rem;
+    }
+
+    .nav-wa-popup .wa-popup-item {
+        padding: 0.78rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .vivero-naves-list {
+        grid-template-columns: 1fr;
+        gap: 0.48rem;
+    }
+
+    .nave-card-btn {
+        padding: 0.5rem 0.65rem;
+    }
+
+    .nave-card-thumb {
+        width: 44px;
+        height: 44px;
+    }
+
+    .cerco-calculator-box {
+        padding: 1.8rem 1.4rem;
+    }
+
+    .calc-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cascading-pillars,
+    .prod-kpi-grid,
+    .prod-cycle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prod-bridge-card {
+        padding: 1.85rem 1.4rem;
+        border-radius: 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-nav-cta span {
+        display: none;
+    }
+    .wa-Launcher-label {
+        display: none;
+    }
+    .wa-Launcher-btn {
+        padding: 0 15px;
+    }
+}
